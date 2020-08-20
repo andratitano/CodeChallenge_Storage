@@ -1,5 +1,6 @@
 package com.andra.codechallenge_storage
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +11,12 @@ class HalamanMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_halaman_menu)
 
-        val bundle = intent.extras
-        val outputNama = bundle?.getString("nama")
+        try {
+            this.supportActionBar?.hide()
+        } catch (e: NullPointerException) {}
+        val sharedPreferences = getSharedPreferences(userData.SP_NAME, Context.MODE_PRIVATE)
+
+        val outputNama = sharedPreferences.getString(userData.FIELD_USERNAME, "Belum Ada Data")
 
         username.setText("$outputNama VS Komputer")
         username2.setText("$outputNama VS Pemain 2")
@@ -22,6 +27,10 @@ class HalamanMenu : AppCompatActivity() {
 
         iv_hal_2.setOnClickListener {
             startActivity(Intent(this, DualPlayerActivity::class.java))
+        }
+
+        btnProfile.setOnClickListener {
+            startActivity(Intent(this, ProfilActivity::class.java))
         }
     }
 }

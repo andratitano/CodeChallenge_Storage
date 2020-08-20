@@ -42,13 +42,9 @@ class LandingPage3 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         btn_go.setOnClickListener {
-                val nama = et_landing3.text
-                val intent = Intent(context, HalamanMenu::class.java)
-                val bundle = Bundle()
-                bundle.putString("nama", "$nama")
-                intent.putExtras(bundle)
-                startActivity(intent)
+            startActivity(Intent(activity,LoginActivity::class.java))
         }
     }
 

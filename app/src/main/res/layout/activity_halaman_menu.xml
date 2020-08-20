@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B6DBEA"
     tools:context=".HalamanMenu">
 
     <TextView
@@ -56,6 +57,15 @@
         app:layout_constraintStart_toStartOf="@id/iv_hal_2"
         app:layout_constraintEnd_toEndOf="@id/iv_hal_2"
         app:layout_constraintTop_toBottomOf="@id/iv_hal_2" />
+
+    <ImageView
+        android:id="@+id/btnProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_baseline_person_24"
+        android:layout_width="64dp"
+        android:layout_height="64dp"/>
 
 
 
