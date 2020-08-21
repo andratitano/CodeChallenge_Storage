@@ -19,7 +19,7 @@ class DualPlayerActivity : AppCompatActivity() {
 
         val view = binding.root
         setContentView(view)
-        
+
         try {
             this.supportActionBar?.hide()
         } catch (e: NullPointerException) {
